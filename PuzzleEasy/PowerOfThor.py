@@ -1,20 +1,19 @@
 import sys
 import math
-
-# Auto-generated code below aims at helping you parse
-# the standard input according to the problem statement.
-# ---
-# Hint: You can use the debug stream to print initialTX and initialTY, if Thor seems not follow your orders.
-
-
 light_x, light_y, initial_tx, initial_ty = [int(i) for i in input().split()]
-
-# game loop
 while True:
-    remaining_turns = int(input())  # The remaining amount of turns Thor can move. Do not remove this line.
-
-    # Write an action using print
-    # To debug: print("Debug messages...", file=sys.stderr)
-
-
-    print("SE")
+    remaining_turns = int(input())
+    path = ""
+    if initial_ty < light_y:
+        path += "S"
+        initial_ty += 1
+    if initial_ty > light_y:
+        path += "N"
+        initial_ty -= 1
+    if initial_tx < light_x:
+        path += "E"
+        initial_tx += 1
+    if initial_tx > light_x:
+        path += "W"
+        initial_tx -= 1
+    print(path)
