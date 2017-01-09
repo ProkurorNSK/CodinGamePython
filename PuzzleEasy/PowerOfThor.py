@@ -1,5 +1,3 @@
-import sys
-import math
 light_x, light_y, initial_tx, initial_ty = [int(i) for i in input().split()]
 while True:
     remaining_turns = int(input())
